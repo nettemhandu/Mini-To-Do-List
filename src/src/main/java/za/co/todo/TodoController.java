@@ -6,8 +6,7 @@ import io.javalin.http.Context;
 public class TodoController {
     ArrayList<Task> tasks = new ArrayList<>();
 
-    public void showTasks(ctx){
+    public void showTasks(Context ctx){
         ctx.json(tasks);
     }
-
 }
