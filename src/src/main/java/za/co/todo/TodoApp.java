@@ -10,7 +10,7 @@ public class TodoApp {
         // initialize Thymeleaf TemplateEngine
         TemplateEngine templateEngine = new TemplateEngine();
         ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
-        resolver.setPrefix("/templates/");
+        resolver.setPrefix("/templates/index");
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML");
         resolver.setCharacterEncoding("UTF-8");
