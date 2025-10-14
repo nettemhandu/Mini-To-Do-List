@@ -24,7 +24,7 @@ public class TodoApp {
 
         // set up routes
 //        app.get("/", controller::showTasks);
-        app.get("/tasks", ctx -> {
+        app.get("/", ctx -> {
             Context thymeleafContext = new Context();
             thymeleafContext.setVariable("tasks", controller.tasks);
             String html = templateEngine.process("index", thymeleafContext);
