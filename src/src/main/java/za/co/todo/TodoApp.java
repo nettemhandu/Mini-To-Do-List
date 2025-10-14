@@ -23,7 +23,7 @@ public class TodoApp {
         Javalin app = Javalin.create().start(7070);
 
         // set up routes
-        app.get("/", controller::showTasks);
+//        app.get("/", controller::showTasks);
         app.get("/tasks", ctx -> {
             Context thymeleafContext = new Context();
             thymeleafContext.setVariable("tasks", controller.tasks);
