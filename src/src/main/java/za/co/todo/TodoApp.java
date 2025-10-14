@@ -10,7 +10,7 @@ public class TodoApp {
         // initialize Thymeleaf TemplateEngine
         TemplateEngine templateEngine = new TemplateEngine();
         ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
-        resolver.setPrefix("/templates/index");
+        resolver.setPrefix("/templates/");
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML");
         resolver.setCharacterEncoding("UTF-8");
@@ -27,7 +27,7 @@ public class TodoApp {
         app.get("/tasks", ctx -> {
             Context thymeleafContext = new Context();
             thymeleafContext.setVariable("tasks", controller.tasks);
-            String html = templateEngine.process("tasks", thymeleafContext);
+            String html = templateEngine.process("index", thymeleafContext);
             ctx.html(html);
         });
     }
