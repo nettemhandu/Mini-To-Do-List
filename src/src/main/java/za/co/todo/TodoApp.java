@@ -29,5 +29,12 @@ public class TodoApp {
             String html = templateEngine.process("index", thymeleafContext);
             ctx.html(html);
         });
+
+        app.post("/add-task", ctx -> {
+            String description = ctx.formParam("description");
+            controller.addTask(description);
+            ctx.redirect("/tasks");
+        });
+
     }
 }
