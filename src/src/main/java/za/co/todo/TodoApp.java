@@ -36,5 +36,12 @@ public class TodoApp {
             ctx.redirect("/tasks");
         });
 
+        app.post("/mark-done", ctx -> {
+            int id = Integer.parseInt(ctx.formParam("id"));
+            controller.markTaskAsDone(id);
+            ctx.redirect("/tasks");
+        });
+
+
     }
 }

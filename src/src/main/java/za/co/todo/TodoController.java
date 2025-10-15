@@ -20,4 +20,13 @@ public class TodoController {
         int id = tasks.size() + 1;
         tasks.add(new Task(id, "description", false));
     }
+
+    public void markTaskAsDone(int id) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                task.setStatus(true);
+                break;
+            }
+        }
+    }
 }

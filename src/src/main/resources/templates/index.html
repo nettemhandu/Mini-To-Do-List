@@ -17,6 +17,12 @@
         <span th:text="${task.id}"></span>
         <span th:text="${task.description}"></span>
         <span th:text="${task.status} ? 'Done' : 'Not Done'"></span>
+
+        <form action="/mark-done" method="post" style="display:inline;">
+            <input type="hidden" name="id" th:value="${task.id}">
+            <button type="submit">Mark Done</button>
+        </form>
+
     </li>
 </ul>
 </body>
