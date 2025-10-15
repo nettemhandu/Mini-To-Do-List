@@ -15,4 +15,9 @@ public class TodoController {
     public void showTasks(Context ctx){
         ctx.json(tasks);
     }
+
+    public void addTask(String description) {
+        int id = tasks.size() + 1;
+        tasks.add(new Task(id, "description", false));
+    }
 }
